@@ -1,0 +1,35 @@
+# Ubifood
+## Ubifood-Backend
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+This is the codebase for the ubifood's backend project created by Unipe's college students.
+
+Ubifood is an entrepreneurship project with the propose to create a menu of local restaurants. ~~Originally created based on the fact that we were trying to reach which 'coxinha' around our campus was more finatial viable.~~
+
+
+This project works using these technologies:
+- Django
+- Django-Rest_Framework
+- ...more
+
+## Installation
+``` python
+py -m venv venv  #Initialiaze virtual enviroment
+cd /venv/Scripts
+activate # or .\activate in case of powershell
+cd ../..
+pip install -r requirements.txt
+```
+## Features
+
+- CRUD RESTAURANTES
+- CRUD COMIDAS
+- CRUD USUÁRIO
+- Filtros de pesquisa + pagination
+- more...
+
+## License
+
+UNIPE
+
+**Free Software, Hell Yeah!**
