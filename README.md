@@ -26,10 +26,10 @@ pip install -r requirements.txt
 ```
 ## Features
 
-- CRUD RESTAURANTES
-- CRUD COMIDAS
-- CRUD USUÁRIO
-- Filtros de pesquisa + pagination
+- CRUD RESTAURANTS
+- CRUD FOODS
+- CRUD USERS
+- Search filters + pagination
 - more...
 
 ## License
