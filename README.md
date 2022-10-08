@@ -10,6 +10,7 @@ Ubifood is an entrepreneurship project with the propose to create a menu of loca
 This project works using these technologies:
 - Django
 - Django-Rest_Framework
+- Postgis
 - ...more
 
 ## Installation
@@ -19,6 +20,9 @@ cd /venv/Scripts
 activate # or .\activate in case of powershell
 cd ../..
 pip install -r requirements.txt
+
+#set up a local postgres database and add postgis extension
+# Read this for more info: https://docs.djangoproject.com/en/4.1/ref/contrib/gis/install/postgis/
 ```
 ## Features
 
