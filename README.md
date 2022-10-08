@@ -10,6 +10,7 @@ Ubifood is an entrepreneurship project with the propose to create a menu of loca
 This project works using these technologies:
 - Django
 - Django-Rest_Framework
+- PostgresSQL
 - Postgis
 - ...more
 
