@@ -9,19 +9,24 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import os
-if os.name == 'nt':
-    OSGEO4W = r"C:\OSGeo4W"
-    assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W
-    os.environ['OSGEO4W_ROOT'] = OSGEO4W
-    os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
-    os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
-    os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
-    GEOS_LIBRARY_PATH = 'C:\\OSGeo4W\\bin\\geos_c.dll'
-    GDAL_LIBRARY_PATH = 'C:\\OSGeo4W\\bin\\gdal304.dll'
-
 
 from pathlib import Path
+import os
+import json
+
+settings = 'settings.json'
+
+with open(settings) as f:
+    settings = json.loads(f.read())
+
+
+# Postgis configuration
+if os.name == 'nt':
+    os.environ['GDAL_DATA'] = settings.get('GDAL_DATA')
+    os.environ['PROJ_LIB'] = settings.get('PROJ_LIB')
+    GDAL_LIBRARY_PATH = settings.get('GDAL_LIBRARY_PATH')
+    GEOS_LIBRARY_PATH = settings.get('GEOS_LIBRARY_PATH')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -92,30 +97,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'ubifood',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-
-    }
-}
-
+DATABASES = settings.get('DATABASES')
 
 
 # Rest framework JWT authentication
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissions',
     ],
+    'DEFAULT_FILTER_BACKENDS': ['api.filters.JSONFilterBackend'],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 100
 }
 
 # Password validation
