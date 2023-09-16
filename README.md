@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ## Settings.json file (This should be placed on the root of directory)
 ```json
 {
-    "DEBUG":false,
+    "DEBUG":true, 
     "GDAL_DATA":"/usr/share/gdal/",
     "PROJ_LIB":"/usr/share/proj/",
     "GDAL_LIBRARY_PATH":"/usr/lib/libgdal.so",
@@ -51,7 +51,7 @@ pip install -r requirements.txt
     "MEDIA_ROOT":"/var/www/media/Unifood-backend/media/",
     "STATIC_URL":"static/",
     "STATIC_ROOT":"/var/www/static/static/",
-    "STATICFILES_DIRS":["/var/www/media/Unifood-backend/static/"]
+    "STATICFILES_DIRS":["/var/www/static/Unifood-backend/static/"]  // Obs: if debug false your web server that will handle staticfiles dir
 }
 ```
 
