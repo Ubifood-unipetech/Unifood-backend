@@ -21,11 +21,10 @@ with open(settings) as f:
 
 
 # Postgis configuration
-if os.name == 'nt':
-    os.environ['GDAL_DATA'] = settings.get('GDAL_DATA')
-    os.environ['PROJ_LIB'] = settings.get('PROJ_LIB')
-    GDAL_LIBRARY_PATH = settings.get('GDAL_LIBRARY_PATH')
-    GEOS_LIBRARY_PATH = settings.get('GEOS_LIBRARY_PATH')
+os.environ['GDAL_DATA'] = settings.get('GDAL_DATA')
+os.environ['PROJ_LIB'] = settings.get('PROJ_LIB')
+GDAL_LIBRARY_PATH = settings.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = settings.get('GEOS_LIBRARY_PATH')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
