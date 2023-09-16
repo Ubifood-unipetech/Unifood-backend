@@ -22,7 +22,7 @@ cd ../..
 pip install -r requirements.txt
 
 # Set up a local postgres database and add postgis extension
-# Create  a geospatial database and set the files on a settings.json file
+# Create  a geospatial database and set the enviroment settings such as files,credentials on a settings.json file
 # Read this for more info: https://docs.djangoproject.com/en/4.1/ref/contrib/gis/install/postgis/
 ```
 
