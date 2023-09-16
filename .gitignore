@@ -131,6 +131,7 @@ venv.bak/
 settings.json
 static/
 media/
+*.sock
 
 # Spyder project settings
 .spyderproject
