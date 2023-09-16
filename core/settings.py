@@ -38,11 +38,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)36%in30w@w*0m8!+6i@9h9h)oc&r0ck7(-@3zt%mmz4s20e7+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = settings.get('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = settings.get('ALLOWED_HOSTS')
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = settings.get('CORS_ORIGIN_ALLOW_ALL')
+
+if not CORS_ORIGIN_ALLOW_ALL:
+    CORS_ALLOWED_ORIGINS = settings.get('CORS_ALLOWED_ORIGINS')
 
 # Application definition
 
@@ -136,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -145,10 +148,16 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript, Images) and Media files 
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+# https://docs.djangoproject.com/en/4.2/topics/files/
 
-STATIC_URL = 'static/'
+MEDIA_URL = settings.get('MEDIA_URL')
+MEDIA_ROOT = settings.get('MEDIA_ROOT')
+
+STATIC_ROOT = settings.get('STATIC_ROOT')
+STATIC_URL = settings.get('STATIC_URL')
+STATICFILES_DIRS = settings.get('STATICFILES_DIRS')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

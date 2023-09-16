@@ -29,20 +29,29 @@ pip install -r requirements.txt
 ## Settings.json file (This should be placed on the root of directory)
 ```json
 {
+    "DEBUG":false,
+    "GDAL_DATA":"/usr/share/gdal/",
+    "PROJ_LIB":"/usr/share/proj/",
+    "GDAL_LIBRARY_PATH":"/usr/lib/libgdal.so",
+    "GEOS_LIBRARY_PATH":"/usr/local/lib/libgeos_c.so",
+    "ALLOWED_HOSTS":["*"],
+    "CORS_ORIGIN_ALLOW_ALL":true,
+    "CORS_ALLOWED_ORIGINS":null,
     "DATABASES":{
         "default":{
             "ENGINE":"django.contrib.gis.db.backends.postgis",
             "NAME": "unifood",
-            "USER": "postgres",
-            "PASSWORD":"root",
-            "HOST": "localhost", 
+            "USER": "unifood",
+            "PASSWORD":"jailson123",
+            "HOST": "localhost",
             "PORT": "5432"
         }
     },
-    "GDAL_DATA":"C:\\Program Files\\PostgreSQL\\15\\gdal-data",
-    "PROJ_LIB":"C:\\Program Files\\PostgreSQL\\15\\share\\contrib\\postgis-3.4\\proj",
-    "GDAL_LIBRARY_PATH":"C:\\Program Files\\PostgreSQL\\15\\bin\\libgdal-33.dll",
-    "GEOS_LIBRARY_PATH":"C:\\Program Files\\PostgreSQL\\15\\bin\\libgeos_c.dll"
+    "MEDIA_URL":"media/",
+    "MEDIA_ROOT":"/var/www/media/Unifood-backend/media/",
+    "STATIC_URL":"static/",
+    "STATIC_ROOT":"/var/www/static/static/",
+    "STATICFILES_DIRS":["/var/www/media/Unifood-backend/static/"]
 }
 ```
 
