@@ -26,6 +26,7 @@ class Login(TokenObtainPairView):
         )
         if user:
             login(request, user)
+            response.data['user'] = UserSerializer(user).data
         return response
 
 class Register(APIView):
