@@ -47,6 +47,7 @@ class Product(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     label = models.CharField(max_length=50)
+    desc = models.CharField(max_length=100)
     icon = models.ImageField(upload_to='assets/product/images/')
 
     def __str__(self):
