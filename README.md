@@ -47,6 +47,10 @@ pip install -r requirements.txt
             "PORT": "5432"
         }
     },
+     "LEAFLET_CONFIG":{
+        "DEFAULT_CENTER": [-7.1586642, -34.8537069],
+        "DEFAULT_ZOOM": 16
+    },
     "MEDIA_URL":"media/",
     "MEDIA_ROOT":"/var/www/media/Unifood-backend/media/",
     "STATIC_URL":"static/",

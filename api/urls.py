@@ -1,9 +1,13 @@
 from django.urls import include, path
 from rest_framework import routers                  
-from api.restaurant import Restaurants
+from api.restaurants import Restaurants
+from api.products import Products, ProductTypes
 from api.authentication import Login
+
 router = routers.DefaultRouter()      
 router.register('restaurants',Restaurants)         
+router.register('products', Products)
+router.register('product/types', ProductTypes)
 
 urlpatterns = [
     path('', include(router.urls)),
