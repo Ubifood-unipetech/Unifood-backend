@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework import serializers
 from rest_framework.permissions import IsAdminUser
 from api.models import Product, ProductType
-from api.permissions import IsObjMember
+from api.permissions import IsObjRestaurantMember
     
 class ProductTypeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,4 +32,4 @@ class Products(viewsets.ModelViewSet):
     """
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = [IsObjMember]
+    permission_classes = [IsObjRestaurantMember]
