@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'leaflet',
     'corsheaders',
     'rest_framework',
     'rest_framework_gis',
@@ -101,6 +102,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = settings.get('DATABASES')
 
+LEAFLET_CONFIG = settings.get('LEAFLET_CONFIG')
 
 # Rest framework JWT authentication
 REST_FRAMEWORK = {
