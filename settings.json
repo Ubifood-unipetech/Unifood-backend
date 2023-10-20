@@ -1,0 +1,29 @@
+{
+    "DEBUG":true, 
+    "GDAL_DATA":"/usr/share/gdal/",
+    "PROJ_LIB":"/usr/share/proj/",
+    "GDAL_LIBRARY_PATH":"/usr/lib/libgdal.so",
+    "GEOS_LIBRARY_PATH":"/usr/local/lib/libgeos_c.so",
+    "ALLOWED_HOSTS":["*"],
+    "CORS_ORIGIN_ALLOW_ALL":true,
+    "CORS_ALLOWED_ORIGINS":null,
+    "DATABASES":{
+        "default":{
+            "ENGINE":"django.contrib.gis.db.backends.postgis",
+            "NAME": "unifood",
+            "USER": "unifood",
+            "PASSWORD":"jailson123",
+            "HOST": "localhost",
+            "PORT": "5432"
+        }
+    },
+     "LEAFLET_CONFIG":{
+        "DEFAULT_CENTER": [-7.1586642, -34.8537069],
+        "DEFAULT_ZOOM": 16
+    },
+    "MEDIA_URL":"media/",
+    "MEDIA_ROOT":"/var/www/media/Unifood-backend/media/",
+    "STATIC_URL":"static/",
+    "STATIC_ROOT":"/var/www/static/static/",
+    "STATICFILES_DIRS":["/var/www/static/Unifood-backend/static/"]  // Obs: if debug false your web server that will handle staticfiles dir
+}
