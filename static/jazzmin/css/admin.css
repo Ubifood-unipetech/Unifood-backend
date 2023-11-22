@@ -1,0 +1,53 @@
+footer, .main-footer{
+    visibility: hidden;
+}
+
+.sidebar-dark-primary, .brand-link, .user-panel, .navbar-dark{
+    background-color: black !important;
+    border-bottom: 1px solid black !important;
+}
+
+.content-wrapper, .dark-mode{
+    background-color: #101010 !important;
+}
+
+
+a.btn:hover{
+    background-color: #EACA24 !important;
+}
+
+.btn-outline-info {
+    border-color: black !important;
+}
+
+.nav-link.active, .btn-success{
+    color: white !important;
+    background-color: black !important;
+    border:#EACA24;
+    font-weight: bold !important;
+}
+
+.btn-primary{
+    color: white !important;
+    background-color: #EACA24 !important;
+    border-color: #EACA24 !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+
+li p,.nav-header, span .brand-text{
+    color: white !important;
+}
+
+.card-body{
+    color:black !important;
+    background-color: white !important;
+}
+
+
+label{
+    color: black !important;
+}
+.login-box-msg,.text-cente, td a, input::placeholder{
+    color: black !important;
+}

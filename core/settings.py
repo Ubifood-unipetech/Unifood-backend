@@ -50,6 +50,7 @@ if not CORS_ORIGIN_ALLOW_ALL:
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,6 +70,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -160,7 +162,8 @@ MEDIA_ROOT = settings.get('MEDIA_ROOT')
 STATIC_ROOT = settings.get('STATIC_ROOT')
 STATIC_URL = settings.get('STATIC_URL')
 STATICFILES_DIRS = settings.get('STATICFILES_DIRS')
-
+JAZZMIN_SETTINGS = settings.get('JAZZMIN_SETTINGS')
+JAZZMIN_UI_TWEAKS = settings.get('JAZZMIN_UI_TWEAKS')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
